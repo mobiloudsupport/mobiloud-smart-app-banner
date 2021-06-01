@@ -25,7 +25,16 @@ if (!class_exists('MSAB')) {
             add_action('wp_head', array($this, 'add_banner_meta'));
             add_action('wp_footer', array($this, 'add_custom_sticky_navigation_class'));
             add_action('wp_enqueue_scripts', array($this, 'enqueue_scripts'));
+            add_action('init', array($this, 'msab_load_textdomain'));
 
+        }
+
+        /**
+         * Load plugin textdomain.
+         */
+        function msab_load_textdomain()
+        {
+            load_plugin_textdomain('msab', false, MSAB_PLUGIN_DIR . 'languages');
         }
 
         /**
@@ -65,7 +74,7 @@ if (!class_exists('MSAB')) {
                     $msab_meta_tags .= '<meta name="smartbanner:icon-apple" content="' . wp_get_attachment_image_src($current_option['app_icon'], 'full')[0] . '">';
                     $msab_meta_tags .= '<meta name="smartbanner:icon-google" content="' . wp_get_attachment_image_src($current_option['app_icon'], 'full')[0] . '">';
                 }
-                $msab_meta_tags .= '<meta name="smartbanner:button" content="VIEW">';
+                $msab_meta_tags .= '<meta name="smartbanner:button" content="' . esc_html__('VIEW', 'msab') . '">';
                 if (!empty($current_option['apple_app_url'])) {
                     $apple_url = esc_url($current_option['apple_app_url']);
                     preg_match("/id(\d+)/", $apple_url, $match);
@@ -76,7 +85,9 @@ if (!class_exists('MSAB')) {
                     $msab_meta_tags .= '<meta name="smartbanner:button-url-google" content="' . esc_url($current_option['android_app_url']) . '">';
                 }
                 $msab_meta_tags .= '<meta name="smartbanner:enabled-platforms" content="android,ios">';
-                $msab_meta_tags .= '<meta name="smartbanner:close-label" content="Close">';
+                $msab_meta_tags .= '<meta name="smartbanner:close-label" content="' . esc_html__('Close', 'msab') . '">';
+                $msab_meta_tags .= '<meta name="smartbanner:android-install-label" content="' . esc_html__('INSTALL', 'msab') . '">';
+                $msab_meta_tags .= '<meta name="smartbanner:android-close-label" content="' . esc_html__('No Thanks', 'msab') . '">';
                 $msab_meta_tags .= '<meta name="smartbanner:api" content="true">';
 
                 $msab_meta_tags .= '<!-- End Mobiloud Smart App Banner configuration -->';

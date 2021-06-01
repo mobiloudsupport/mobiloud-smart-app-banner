@@ -29,6 +29,7 @@ if (!class_exists('MSAB_Admin')) {
             add_action('admin_menu', array($this, 'admin_menu'));
             add_action('plugin_action_links_' . MSAB_PLUGIN_BASENAME, array($this, 'add_action_links'));
             add_action('admin_enqueue_scripts', array($this, 'admin_enqueue_scripts'));
+            add_action('init', array($this, 'msab_load_textdomain'));
 
         }
 
@@ -43,7 +44,7 @@ if (!class_exists('MSAB_Admin')) {
         {
 
             $links = array_merge(array(
-                '<a href="' . esc_url(admin_url('/options-general.php?page=msab')) . '">' . __('Settings', 'msab') . '</a>'
+                '<a href="' . esc_url(admin_url('/options-general.php?page=msab')) . '">' . esc_html__('Settings', 'msab') . '</a>'
             ), $links);
 
             return $links;
@@ -56,8 +57,8 @@ if (!class_exists('MSAB_Admin')) {
         public function admin_menu()
         {
             add_options_page(
-                __('Smart App Banners', 'msab'),
-                __('Smart App Banners', 'msab'),
+                esc_html__('Smart App Banners', 'msab'),
+                esc_html__('Smart App Banners', 'msab'),
                 'manage_options',
                 'msab',
                 array($this, 'load_settings_page')
@@ -80,14 +81,14 @@ if (!class_exists('MSAB_Admin')) {
             //Register setting sections
             add_settings_section(
                 'msab_general_setting_section',
-                'General Settings',
+                esc_html__('General Settings', 'msab'),
                 array($this, 'print_general_settings'),
                 'msab'
             );
 
             add_settings_section(
                 'msab_information_setting_section',
-                'App Information Settings',
+                esc_html__('App Information Settings', 'msab'),
                 array($this, 'print_information_settings'),
                 'msab'
             );
@@ -95,7 +96,7 @@ if (!class_exists('MSAB_Admin')) {
             //General settings fields
             add_settings_field(
                 'apple_app_url',
-                'Apple App URL',
+                esc_html__('Apple App URL', 'msab'),
                 array($this, 'apple_url_callback'),
                 'msab',
                 'msab_general_setting_section'
@@ -103,14 +104,14 @@ if (!class_exists('MSAB_Admin')) {
 
             add_settings_field(
                 'android_app_url',
-                'Android App URL',
+                esc_html__('Android App URL', 'msab'),
                 array($this, 'android_url_callback'),
                 'msab',
                 'msab_general_setting_section'
             );
             add_settings_field(
                 'sticky_header',
-                'Custom sticky header class/id',
+                esc_html__('Custom sticky header class/id', 'msab'),
                 array($this, 'app_sticky_header_callback'),
                 'msab',
                 'msab_general_setting_section'
@@ -119,7 +120,7 @@ if (!class_exists('MSAB_Admin')) {
             //Information settings fields
             add_settings_field(
                 'app_icon',
-                'Icon',
+                esc_html__('Icon', 'msab'),
                 array($this, 'app_icon_callback'),
                 'msab',
                 'msab_information_setting_section'
@@ -127,14 +128,14 @@ if (!class_exists('MSAB_Admin')) {
 
             add_settings_field(
                 'app_title',
-                'Title',
+                esc_html__('Title', 'msab'),
                 array($this, 'app_title_callback'),
                 'msab',
                 'msab_information_setting_section'
             );
             add_settings_field(
                 'app_desc',
-                'Description',
+                esc_html__('Description', 'msab'),
                 array($this, 'app_desc_callback'),
                 'msab',
                 'msab_information_setting_section'
