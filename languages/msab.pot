@@ -1,0 +1,91 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MobiLoud Smart App Banners\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-19 17:44+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.5.2; wp-5.7\n"
+"X-Domain: msab"
+
+#: admin/class-msab-admin.php:107
+msgid "Android App URL"
+msgstr ""
+
+#: admin/class-msab-admin.php:91
+msgid "App Information Settings"
+msgstr ""
+
+#: admin/class-msab-admin.php:99
+msgid "Apple App URL"
+msgstr ""
+
+#: includes/class-msab.php:88
+msgid "Close"
+msgstr ""
+
+#. Description of the plugin
+msgid "Creating a App banner prompt within the site"
+msgstr ""
+
+#: admin/class-msab-admin.php:114
+msgid "Custom sticky header class/id"
+msgstr ""
+
+#: admin/class-msab-admin.php:138
+msgid "Description"
+msgstr ""
+
+#: admin/class-msab-admin.php:84
+msgid "General Settings"
+msgstr ""
+
+#. URI of the plugin
+#. Author URI of the plugin
+msgid "https://www.mobiloud.com"
+msgstr ""
+
+#: admin/class-msab-admin.php:123
+msgid "Icon"
+msgstr ""
+
+#: includes/class-msab.php:89
+msgid "INSTALL"
+msgstr ""
+
+#. Author of the plugin
+msgid "MobiLoud"
+msgstr ""
+
+#. Name of the plugin
+msgid "MobiLoud Smart App Banners"
+msgstr ""
+
+#: includes/class-msab.php:90
+msgid "No Thanks"
+msgstr ""
+
+#: admin/class-msab-admin.php:47
+msgid "Settings"
+msgstr ""
+
+#: admin/class-msab-admin.php:60 admin/class-msab-admin.php:61
+#: admin/class-msab-admin.php:167
+msgid "Smart App Banners"
+msgstr ""
+
+#: admin/class-msab-admin.php:131
+msgid "Title"
+msgstr ""
+
+#: includes/class-msab.php:77
+msgid "VIEW"
+msgstr ""

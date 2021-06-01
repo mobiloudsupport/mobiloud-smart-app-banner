@@ -8,6 +8,7 @@ Version: 1.1.3
 Author URI: https://www.mobiloud.com
 License: GPLv2 or later
 Text Domain: msab
+Domain Path: /languages
 */
 
 // Make sure we don't expose any info if called directly

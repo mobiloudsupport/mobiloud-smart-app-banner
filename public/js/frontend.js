@@ -30,8 +30,8 @@ jQuery(function ($) {
                 }
                 html += "</div></div>";
                 if (platform === 'android') {
-                    currentOptions.button = 'INSTALL';
-                    html += "<a href='javascript:void(0);' class='smartbanner__close js_smartbanner__exit' aria-label='" + smartbanner.closeLabel + "'>No Thanks</a>";
+                    currentOptions.button = currentOptions.androidInstallLabel;
+                    html += "<a href='javascript:void(0);' class='smartbanner__close js_smartbanner__exit' aria-label='" + smartbanner.closeLabel + "'>" + currentOptions.androidCloseLabel + "</a>";
                 }
                 if (typeof smartbanner.buttonUrl !== "undefined" && typeof currentOptions.button !== "undefined") {
                     html += "<a href='" + smartbanner.buttonUrl + "' target='_blank' class='smartbanner__button js_smartbanner__button' rel='noopener' aria-label='" + currentOptions.button + "'>" +
