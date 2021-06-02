@@ -16,7 +16,9 @@ if ( ! function_exists( 'msab_create_text_field' ) ) {
 
 		return sprintf(
 			'<input type="text" id="%s" name="mobiloud_smart_app_banner[%s]" value="%s" style="width: 50%%;"/>',
-			$field_id, $field_id, $field_value
+			$field_id,
+			$field_id,
+			$field_value
 		);
 	}
 }

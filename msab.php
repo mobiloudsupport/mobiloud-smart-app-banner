@@ -19,11 +19,11 @@ define( 'MSAB_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'MSAB_PLUGIN_DIR_URL', plugin_dir_url( __FILE__ ) );
 define( 'MSAB_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 
-require_once( MSAB_PLUGIN_DIR . 'includes/class-msab.php' );
+require_once MSAB_PLUGIN_DIR . 'includes/class-msab.php';
 
 register_activation_hook( __FILE__, array( 'MSAB', 'plugin_activation' ) );
 register_deactivation_hook( __FILE__, array( 'MSAB', 'plugin_deactivation' ) );
 
 if ( is_admin() || ( defined( 'WP_CLI' ) && WP_CLI ) ) {
-	require_once( MSAB_PLUGIN_DIR . 'admin/class-msab-admin.php' );
+	require_once MSAB_PLUGIN_DIR . 'admin/class-msab-admin.php';
 }
