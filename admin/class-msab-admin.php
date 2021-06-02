@@ -115,6 +115,13 @@ if (!class_exists('MSAB_Admin')) {
                 'msab',
                 'msab_general_setting_section'
             );
+            add_settings_field(
+                'homepage_only',
+                'Showing the app banner on the home page only',
+                array($this, 'homepage_only_callback'),
+                'msab',
+                'msab_general_setting_section'
+            );
 
             //Information settings fields
             add_settings_field(
@@ -239,6 +246,11 @@ if (!class_exists('MSAB_Admin')) {
         public function app_icon_callback()
         {
             echo $this->image_uploader_field('app_icon', 'mobiloud_smart_app_banner[app_icon]', $this->options['app_icon']);
+        }
+
+        public function homepage_only_callback()
+        {
+	        echo msab_create_checkbox_field('homepage_only', $this->options);
         }
 
         /**

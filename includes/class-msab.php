@@ -33,18 +33,20 @@ if (!class_exists('MSAB')) {
          */
         public function enqueue_scripts()
         {
-            //Styles
-            wp_enqueue_style('msab-lib-css', MSAB_PLUGIN_DIR_URL . 'public/libs/smart-banner-js/smartbanner.min.css', array(), 'null', 'all');
-            wp_enqueue_style('msab-custom-css', MSAB_PLUGIN_DIR_URL . 'public/css/frontend.css', array(), 'null', 'all');
-            //Scripts
-            wp_enqueue_script('msab-lib-js', MSAB_PLUGIN_DIR_URL . 'public/libs/smart-banner-js/smartbanner.js', array('jquery'), null, true);
-            wp_enqueue_script('msab-custom-js', MSAB_PLUGIN_DIR_URL . 'public/js/frontend.js', array('msab-lib-js'), null, true);
-            //Custom variables
-            $image_folder_url = MSAB_PLUGIN_DIR_URL;
-            $localizations = array('imageFolderURL' => $image_folder_url);
+	        $homepage_only = $this->options['homepage_only'] === '1';
+	        if ( ( $homepage_only && ( is_front_page() || is_home() ) ) || ! $homepage_only ) {
+		        //Styles
+		        wp_enqueue_style( 'msab-lib-css', MSAB_PLUGIN_DIR_URL . 'public/libs/smart-banner-js/smartbanner.min.css', array(), 'null', 'all' );
+		        wp_enqueue_style( 'msab-custom-css', MSAB_PLUGIN_DIR_URL . 'public/css/frontend.css', array(), 'null', 'all' );
+		        //Scripts
+		        wp_enqueue_script( 'msab-lib-js', MSAB_PLUGIN_DIR_URL . 'public/libs/smart-banner-js/smartbanner.js', array( 'jquery' ), null, true );
+		        wp_enqueue_script( 'msab-custom-js', MSAB_PLUGIN_DIR_URL . 'public/js/frontend.js', array( 'msab-lib-js' ), null, true );
+		        //Custom variables
+		        $image_folder_url = MSAB_PLUGIN_DIR_URL;
+		        $localizations    = array( 'imageFolderURL' => $image_folder_url );
 
-            wp_localize_script('msab-custom-js', 'localizedVars', $localizations);
-
+		        wp_localize_script( 'msab-custom-js', 'localizedVars', $localizations );
+	        }
         }
 
         /**
